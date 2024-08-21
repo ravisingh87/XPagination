@@ -11,4 +11,38 @@ body {
 
 .container {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.employee_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+table {
+  width: 100%;
+  tr:nth-child(1) {
+    background-color: #019879;
+    color: #fff;
+  }
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.employee_table {
+  width: 100%;
+  height: 27rem;
+  overflow: hidden;
 }
