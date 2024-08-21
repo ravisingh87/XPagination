@@ -10,14 +10,14 @@ const Pagination = ({ length, postPerPage, handlePagination, currentPage }) => {
   return (
     <div className='pagination'>
       <button
-        onClick={() => handlePagination(currentPage, "-")}
+        onClick={() => handlePagination("-")}
         disabled={currentPage === 1}
       >
         Previous
       </button>
       <span>{currentPage}</span>
       <button
-        onClick={() => handlePagination(currentPage, "+")}
+        onClick={() => handlePagination("+")}
         disabled={currentPage === Math.ceil(length / postPerPage)}
       >
         Next

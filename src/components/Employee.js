@@ -7,6 +7,7 @@ const Employee = () => {
   const [empData, setEmpData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPge, SetPostsPerPage] = useState(10);
+  const [loading, setLoading] = useState(true);
 
   const fetchData = async () => {
     try {
@@ -15,17 +16,17 @@ const Employee = () => {
       );
       const json = await res.json();
       setEmpData([...json]);
+      setLoading(false);
     } catch (error) {
       alert(error);
     }
   };
-  const handlePagination = (pageNumber, operation) => {
+  const handlePagination = (operation) => {
     if (operation === "+") {
       setCurrentPage((prev) => prev + 1);
     } else if (operation === "-") {
       setCurrentPage((prev) => prev - 1);
     }
-    // setCurrentPage(pageNumber);
   };
 
   const indexOfLastPost = currentPage * postsPerPge;
@@ -39,7 +40,7 @@ const Employee = () => {
   return (
     <div className='employee_container'>
       <h3>Employee Data Table</h3>
-      <EmployeeTable data={currentPosts} />
+      <EmployeeTable data={currentPosts} loading={loading} />
       <Pagination
         length={empData.length}
         postPerPage={postsPerPge}
