@@ -15,10 +15,10 @@ const EmployeeTable = ({ data, loading }) => {
             {data.length > 0 &&
               data.map((item) => (
                 <tr key={item.id}>
-                  <th>{item.id}</th>
-                  <th>{item.name}</th>
-                  <th>{item.email}</th>
-                  <th>{item.role}</th>
+                  <td>{item.id}</td>
+                  <td>{item.name}</td>
+                  <td>{item.email}</td>
+                  <td>{item.role}</td>
                 </tr>
               ))}
           </tbody>

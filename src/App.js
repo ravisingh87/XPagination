@@ -17,7 +17,7 @@ const App = () => {
       setEmpData([...json]);
       setLoading(false);
     } catch (error) {
-      alert(error);
+      alert("Something went wrong.");
     }
   };
   const handlePagination = (operation) => {
@@ -30,7 +30,8 @@ const App = () => {
 
   const indexOfLastPost = currentPage * postsPerPge;
   const indexOfFirstPost = indexOfLastPost - postsPerPge;
-  const currentPosts = empData.slice(indexOfFirstPost, indexOfLastPost);
+  const currentPosts =
+    empData.length > 0 ? empData.slice(indexOfFirstPost, indexOfLastPost) : [];
 
   useEffect(() => {
     fetchData();
