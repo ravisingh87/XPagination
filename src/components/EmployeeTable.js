@@ -6,10 +6,12 @@ const EmployeeTable = ({ data, loading }) => {
       {!loading ? (
         <table>
           <tbody>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Role</th>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+            </tr>
             {data.length > 0 &&
               data.map((item) => (
                 <tr key={item.id}>
