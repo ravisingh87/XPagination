@@ -1,0 +1,11 @@
+.pagination {
+  width: 10rem;
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.active {
+  background-color: #019879;
+}
