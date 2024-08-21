@@ -17,7 +17,7 @@ const App = () => {
       setEmpData([...json]);
       setLoading(false);
     } catch (error) {
-      alert("Something went wrong.");
+      alert("Failed to fetch data.");
     }
   };
   const handlePagination = (operation) => {
